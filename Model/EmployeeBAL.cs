@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace MvcApplication.Model
 {
@@ -55,13 +56,57 @@ namespace MvcApplication.Model
             }
             catch
             {
-
+                throw;
             }
             finally
             {
                 Close();
             }
             return employee;
+        }
+
+        public override int Add(Employee Model)
+        {
+            try
+            {
+                StoreProcedureName = "AddEmployee";
+                AddParameters("@FirstName", Model.FirstName);
+                AddParameters("@LastName", Model.LastName);
+                AddParameters("@Age", Model.Age.ToString());
+                SqlParameter outputParameter = new SqlParameter();
+                outputParameter.ParameterName = "@Id";
+                outputParameter.SqlDbType = SqlDbType.Int;
+                outputParameter.Direction = ParameterDirection.Output;
+                AddParameters(outputParameter);
+                ExecuteNonQuery();
+                return (int)outputParameter.Value;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
+        public override int Delete(int Id)
+        {
+            try
+            {
+                StoreProcedureName = "DeleteEmployeeWithId";
+                AddParameters("@Id", Id.ToString());
+                return ExecuteNonQuery();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                Close();
+            }
         }
     }
 }

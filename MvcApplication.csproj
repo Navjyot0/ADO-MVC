@@ -80,7 +80,9 @@
     <Compile Include="ADO-StronglyTyped.aspx.designer.cs">
       <DependentUpon>ADO-StronglyTyped.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\EmpController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Disconnected-ADO-With-Cache.aspx.cs">
       <DependentUpon>Disconnected-ADO-With-Cache.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,6 +99,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\DBAccess.cs" />
+    <Compile Include="Model\Emp.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\EmployeeBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,9 +118,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Employee\Create.aspx" />
+    <Content Include="Views\Employee\Delete.aspx" />
     <Content Include="Views\Employee\Details.aspx" />
+    <Content Include="Views\Employee\Edit.aspx" />
     <Content Include="Views\Employee\Index.aspx" />
     <Content Include="Ado-Command-Reader.aspx" />
+    <Content Include="Views\Emp\Details.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

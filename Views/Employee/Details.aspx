@@ -10,7 +10,7 @@
     <% if (Model.Id != 0)%>
     <% { %>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Employee Details</legend>
         Id : <%: Model.Id%> <br />
         FirstName : <%: Model.FirstName%><br />
         LastName : <%: Model.LastName%><br />
@@ -20,6 +20,11 @@
     <% else %>
     <% { %>
             <label> No Employee Present with Id=<b><%=Url.RequestContext.RouteData.Values["id"]%></b></label>
+    <% } %>
+    <% using (Html.BeginForm()) { %>
+    <p>
+        <%: Html.ActionLink("Back to List", "Index") %>
+    </p>
     <% } %>
 </body>
 </html>

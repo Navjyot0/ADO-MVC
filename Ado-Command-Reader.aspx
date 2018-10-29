@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ado-Command-Reader.aspx.cs" Inherits="MvcApplication.Views.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ado-Command-Reader.aspx.cs"
+    Inherits="MvcApplication.Views.WebForm1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -9,14 +9,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
         <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
         <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" 
-            BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
-            CellSpacing="2">
+        <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84"
+            BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
             <EmptyDataTemplate>
                 No Emoloyee Found
             </EmptyDataTemplate>
@@ -30,33 +28,32 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
-    
         <br />
         <br />
-    
     </div>
     <div>
-        First Name : <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+        First Name :
+        <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
         <br />
         <br />
-        Last Name : <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+        Last Name :
+        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
         <br />
         <br />
-        Age : <asp:TextBox ID="txtAge" TextMode="Number" min="18" max="99" runat="server"></asp:TextBox>
+        Age :
+        <asp:TextBox ID="txtAge" TextMode="Number" min="18" max="99" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" 
-            onclick="btnSubmit_Click" />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
         <br />
         <br />
         <br />
-        <asp:Button ID="btnTruncate" runat="server" Text="Tuncate All" 
-            onclick="btnTruncate_Click" />
+        <asp:Button ID="btnTruncate" runat="server" Text="Tuncate All" OnClick="btnTruncate_Click" />
         <br />
         <br />
     </div>
-    <asp:GridView ID="gvDepartment" runat="server" CellPadding="4" 
-        ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="gvDepartment" runat="server" CellPadding="4" ForeColor="#333333"
+        GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -70,8 +67,8 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br />
-    <asp:GridView ID="gvEmployee" runat="server" CellPadding="4" 
-        ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="gvEmployee" runat="server" CellPadding="4" ForeColor="#333333"
+        GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -85,9 +82,8 @@
         <SortedDescendingHeaderStyle BackColor="#15524A" />
     </asp:GridView>
     <br />
-    <asp:GridView ID="gvTable" runat="server" BackColor="White" 
-        BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
-        ForeColor="Black" GridLines="Vertical">
+    <asp:GridView ID="gvTable" runat="server" BackColor="White" BorderColor="#DEDFDE"
+        BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
         <AlternatingRowStyle BackColor="White" />
         <FooterStyle BackColor="#CCCC99" />
         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />

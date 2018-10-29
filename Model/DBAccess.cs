@@ -24,8 +24,6 @@ namespace MvcApplication.Model
             }
         }
 
-        
-
         public DBAccess()
         {
             this.SqlCon.ConnectionString = connectionString;
@@ -57,15 +55,41 @@ namespace MvcApplication.Model
             return sdr;
         }
 
+        protected int ExecuteNonQuery()
+        {
+            try
+            {
+                Open();
+                return cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
         protected void AddParameters(string Key, string value)
         {
             SqlParameter parameter = new SqlParameter(Key, value);
             this.cmd.Parameters.Add(parameter);
         }
 
+        protected void AddParameters(SqlParameter outputParameter)
+        {
+            this.cmd.Parameters.Add(outputParameter);
+        }
+
         //Abstract Method
         public abstract IEnumerable<T> GetAll { get; }
 
         public abstract T GetById(int Id);
+
+        public abstract int Add(T Model);
+
+        public abstract int Delete(int Id);
     }
 }
